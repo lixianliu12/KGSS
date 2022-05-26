@@ -1,0 +1,86 @@
+body
+{
+    font-family: sans-serif;
+}
+
+#top_head 
+{
+    margin: auto;
+    line-height: 40px;
+    background-color: #0F4C81;
+    width: 100%; /* Full width */
+}
+
+#head_text
+{
+    color: white;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+#box_container
+{
+    width: 100%;
+}
+
+#div_form
+{
+    float: left;
+    width: 35%;
+    margin-top: 10px;
+}
+
+#message
+{
+    font-size: 18px;
+    margin-left: 20px;
+    color: #0F4C81;
+}
+#textInput
+{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#VIS_draw
+{
+    float: right;
+    width: 60%;
+    border: 1px solid #84898C;
+    margin-top: 10px;
+    
+    height: 90%;
+}
+
+#pt1
+{
+    border: #c0d725 1px solid;
+    text-align: center;
+    margin-left: 10px;
+    background-color: #c0d725;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#pt2
+{
+    border: #c0d725 1px solid;
+    text-align: center;
+    margin-left: 10px;
+    line-height: 30px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+input[type=submit]
+{
+    background-color: #c0d725;
+    border: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+    line-height: 30px;
+    width: 100%;
+    font-size: 22px;
+    color: #363838;
+}

@@ -1,0 +1,108 @@
+
+    
+    <html>
+    <head>
+      <title>Knowledge Graph Generation</title>
+      <script type="text/javascript" src="../static/VIS/dist/vis.js"></script>
+      <link href="../static/VIS/dist/vis.css" rel="stylesheet" type="text/css">
+      <link href="../static/css/kg.css" rel="stylesheet" type="text/css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+    <div id="top_head">
+    <span id="head_text">
+        Knowledge Graph Generation Demo
+    </span>
+    </div>
+    <div id="box_container">
+        <div id="div_form">
+            <form id="kg_info" action="." method="post" enctype=multipart/form-data>
+                
+                <label for="textInput" id="message">--Input Text--</label>
+                <textarea id="textInput" name="textInput" rows="30" cols="60">We know lawyer Alex Smith was born in Honolulu, Hawaii.
+               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </textarea>
+                <br><br>
+
+                <div id="pt1">
+                <label for="myfile">Import Relation Schema (Optional)</label>
+                <input type="file" id="myfile" name="myfile">
+                </div>
+                
+                
+                <div id="pt2">
+                <span>Select Optional Entity Type:</span>
+                <input type="checkbox" id="enttype2" name="enttype2" value="NOUN">
+                <label for="enttype2"> Noun Phrases </label>
+                </div>
+                
+                
+                <input type="submit" value="Submit">
+                
+            </form>
+        </div>
+        <div id="VIS_draw"></div>
+    </div>
+
+    <script type="text/javascript">
+      var nodes = [{'group': 'Event', 'id': 4, 'label': 'Alex Smith'}, {'group': 'Event', 'id': 1, 'label': 'lawyer'}, {'group': 'Event', 'id': 6, 'label': 'Honolulu'}, {'group': 'Event', 'id': 7, 'label': 'Hawaii'}];
+      var edges = [{'from': 4, 'label': 'job_title', 'to': 1, 'smooth': {'type': 'curvedCW', 'roundness': 0.11026694819558225}}, {'from': 4, 'label': 'was_born_in', 'to': 6, 'smooth': {'type': 'curvedCW', 'roundness': 0.9494692153987638}}, {'from': 4, 'label': 'was_born_in', 'to': 7, 'smooth': {'type': 'curvedCW', 'roundness': 0.6440979568513193}}, {'from': 6, 'label': 'is_part_of', 'to': 7, 'smooth': {'type': 'curvedCW', 'roundness': 0.7372578810993031}}];
+
+      var container = document.getElementById("VIS_draw");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+
+          nodes: {
+              
+              size: 10,
+              font: {
+                  size: 25
+              }
+          },
+          edges: {
+              font: {
+                  size: 25,
+                  align: 'center'
+              },
+              color: 'orange',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 1.2}
+              },
+              scaling: {
+                  
+                  label: {enabled: true}
+              },
+              length: 300,
+              smooth: {enabled: false},
+              
+          },
+          physics: {
+              enabled: false,
+              solver: "repulsion",
+              repulsion: {
+                  nodeDistance: 300
+              }
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+      network.stabilize();
+
+    </script>
+    </body>
+    </html>
+    
